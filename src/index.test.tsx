@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { TextWithNote } from './TextWithNote'
 
-describe('ExampleComponent', () => {
+describe('TextWithNote', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(TextWithNote).toBeTruthy()
   })
 })

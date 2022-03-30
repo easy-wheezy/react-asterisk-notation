@@ -1,25 +1,28 @@
-import React from "react";
+import * as React from 'react';
+import { NoteContextType, INote } from './@types/notes';
 
-export const notes = [
+export const NoteContext = React.createContext<NoteContextType | null>(null);
+
+const NoteProvider: React.FC<React.ReactNode> = ({ children }) => {
+  const [notes, setNotes] = React.useState<INote[]>([
     {
-      key: 'first',
-      description: 'this is the first label',
-      order: 1
+      key: 'post 1',
+      description: 'this is a description',
     },
     {
-      key: 'second',
-      description: 'this is the second label',
-      order: 2
+      key: 'post 2',
+      description: 'this is a description',
     },
-];
-interface noteProps {
-  key: string
-  description: string
-  order: number
-}
+  ]);
+  const saveNote = (note: INote) => {
+    const newNode: INote = {
+      key: note.key,
+      description: note.description,
+    };
+    setNotes([...notes, newNode]);
+  };
 
-  
-  export const NoteContext = React.createContext({
-    notes, // default value
-    setNotes: (note: noteProps) => {note},
-  });
+  return <NoteContext.Provider value={{ todos, saveTodo, }}> {children} </NoteContext.Provider>;
+};
+
+export default NoteProvider;

@@ -11,7 +11,9 @@ interface Props {
 }
 
 export const TextWithNote = ({ text }: Props) => {
-  const { setNotes } = useContext(NoteContext);
-  setNotes({key:'id', description:text, order: 1 })
+  const [notes, setNotes] = useContext(NoteContext);
+  const newNotes = notes;
+  newNotes.push( { key:'id', description:text, order: 1 });
+  setNotes(newNotes)
   return <div className={styles.test}>Example Component: {text}</div>
 }

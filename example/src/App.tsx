@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-asterisk-notation'
+import { TextWithNote } from 'react-asterisk-notation'
 import 'react-asterisk-notation/dist/index.css'
 
 const textProps ={
@@ -10,7 +10,7 @@ const textProps ={
   underline : false,
 }
 const App = () => {
-  return <ExampleComponent {...textProps} />
+  return <TextWithNote {...textProps} />
 }
 
 export default App

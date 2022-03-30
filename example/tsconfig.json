@@ -30,7 +30,7 @@
   },
   "include": [
     "src"
-  ],
+, "../src/NoteContext.ts"  ],
   "exclude": [
     "node_modules",
     "build"

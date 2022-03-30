@@ -11,7 +11,7 @@ const NoteProvider: React.FC<React.ReactNode> = ({ children }) => {
     },
     {
       key: 'post 2',
-      description: 'this is a description',
+      description: 'this is another description',
     },
   ]);
   const saveNote = (note: INote) => {
@@ -22,7 +22,7 @@ const NoteProvider: React.FC<React.ReactNode> = ({ children }) => {
     setNotes([...notes, newNode]);
   };
 
-  return <NoteContext.Provider value={{ todos, saveTodo, }}> {children} </NoteContext.Provider>;
+  return <NoteContext.Provider value={{ notes, saveNote }}> {children} </NoteContext.Provider>;
 };
 
 export default NoteProvider;

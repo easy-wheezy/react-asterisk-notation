@@ -1,13 +1,16 @@
 import * as React from 'react'
+import { NoteContextType, INote } from './@types/notes';
 import { NoteContext } from './NoteContext'
 
 export const AsteriskNotes = () => {
+    const { notes } = React.useContext(NoteContext) as NoteContextType;
     return (
-        <NoteContext.Consumer>
-            {value => value[0] && value[0].map(note => {
-                <div>{note.description}</div>
-            })}
-        </NoteContext.Consumer>
+        <div>
+            {notes.map((note: INote) => (
+                <div key={note.key}>{note.description}</div>
+            ))}
+        </div>
+
 
     )
 }

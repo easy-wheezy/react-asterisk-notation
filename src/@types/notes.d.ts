@@ -4,5 +4,5 @@ export interface INote {
   }
   export type NoteContextType = {
     notes: INote[];
-    saveTodo: (note: INote) => void;
+    saveNote: (note: INote) => void;
   };

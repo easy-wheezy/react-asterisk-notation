@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 //@ts-ignore
-import { TextWithNote, AsteriskNotes, NoteContext } from 'react-asterisk-notation'
+import {TextWithNote, AsteriskNotes, NoteProvider } from 'react-asterisk-notation'
 import 'react-asterisk-notation/dist/index.css'
 
 // const notes = {notes:[
@@ -18,15 +18,12 @@ const textProps = {
 }
 
 const App = () => {
-  const [note, setNote] = useState(null);
   return (
     <>
-      <NoteContext.Provider value={[note, setNote]}>
-        <TextWithNote {...textProps} />
-        <TextWithNote {...textProps} />
+      <NoteProvider>
         <TextWithNote {...textProps} />
         <AsteriskNotes />
-      </NoteContext.Provider>
+      </NoteProvider>
 
     </>
 
